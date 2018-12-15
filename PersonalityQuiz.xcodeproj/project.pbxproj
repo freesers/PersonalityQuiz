@@ -60,15 +60,15 @@
 		115E95AB219B1A8E0050E636 /* PersonalityQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				115E95B0219B1A8E0050E636 /* Main.storyboard */,
 				115E95AC219B1A8E0050E636 /* AppDelegate.swift */,
 				115E95AE219B1A8E0050E636 /* IntroductionViewController.swift */,
-				115E95B0219B1A8E0050E636 /* Main.storyboard */,
+				11707CE4219C335F0007C3BA /* QuestionViewController.swift */,
+				11707CE6219C336E0007C3BA /* ResultsViewController.swift */,
 				11707CE8219C377B0007C3BA /* QuestionData.swift */,
 				115E95B3219B1A8E0050E636 /* Assets.xcassets */,
 				115E95B5219B1A8E0050E636 /* LaunchScreen.storyboard */,
 				115E95B8219B1A8E0050E636 /* Info.plist */,
-				11707CE4219C335F0007C3BA /* QuestionViewController.swift */,
-				11707CE6219C336E0007C3BA /* ResultsViewController.swift */,
 			);
 			path = PersonalityQuiz;
 			sourceTree = "<group>";

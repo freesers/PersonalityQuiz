@@ -22,6 +22,7 @@ class ResultsViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
     
+    /// Calculate personality from quiz
     func calculatePersonalityResult() {
         var frequencyOfAnswers: [Answer.AnimalType: Int] = [:]
         
@@ -33,20 +34,7 @@ class ResultsViewController: UIViewController {
         
         let mostCommonAnswer = frequencyOfAnswers.sorted { $0.1 > $1.1 }.first!.key
         
-        
         resultAnswerLabel.text = "You are a \(mostCommonAnswer.rawValue)!"
         resultDefinitionLabel.text = mostCommonAnswer.definition
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

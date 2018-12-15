@@ -63,7 +63,6 @@ class QuestionViewController: UIViewController {
     ]
     
     var questionIndex = 0
-    
     var answersChosen: [Answer] = []
     
     
@@ -71,9 +70,16 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        randomizeQuestions()
         updateUI()
     }
     
+    /// shuffle questions array
+    func randomizeQuestions() {
+        questions.shuffle()
+    }
+    
+    /// appends result of single-answer-button
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         let currentAnswers = questions[questionIndex].answers
         
@@ -93,6 +99,7 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
+    /// appends result of multi-answers-switch
     @IBAction func multipleAnswersButtonPressed(_ sender: Any) {
         let currentAnswers = questions[questionIndex].answers
         
@@ -112,6 +119,7 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
+    /// appends result of ranged-answer-slider
     @IBAction func rangedAnswerButtonPressed(_ sender: Any) {
         let currentAnswers = questions[questionIndex].answers
         let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))
@@ -120,6 +128,7 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
+    /// move to next question
     func nextQuestion() {
         questionIndex += 1
         
@@ -130,7 +139,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    
+    /// update all labels
     func updateUI() {
         singleStackView.isHidden = true
         multipleStackView.isHidden = true
